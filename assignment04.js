@@ -34,24 +34,54 @@ function willSuccess(marks) {
         let pass = [];
         let fail = [];
         for (const number of marks) {
-            if(number>=50){
-                pass.includes(number);
+            if (number >= 50) {
                 pass.push(number);
-            }else{
-                fail.includes(number);
+            } else {
                 fail.push(number);
             }
         }
-        if (pass.length>fail.length) {
+        if (pass.length > fail.length) {
             return true;
         } else {
             return false;
         }
-        
+
     } else {
         return `"Invalid"`
     }
 }
 
-// console.log(willSuccess([60, 70, 80, 40, 30]));
+// console.log(willSuccess([48, 48, 50, 50, 100]));
 
+
+//Problem-04: Valid Proposal
+
+function validProposal(person1, person2) {
+    if (typeof person1 === 'object' && typeof person2 === 'object') {
+        if (person1.gender !== person2.gender) {
+            const age = Math.abs(person1.age - person2.age);
+            if (age <= 7) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    } else {
+        return `"Invalid"`;
+    }
+}
+
+
+// console.log(validProposal(
+//     { name: "Rahul", gender: "male", age: 28 },
+//     { name: "Joya", gender: "female", age: 21 }
+// ))
+
+
+// Problem-05: Let’s Calculate Total Sleep Time
+
+function  calculateSleepTime( times ) {
+    
+}
