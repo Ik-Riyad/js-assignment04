@@ -7,4 +7,22 @@ function calculateVAT(price) {
     }
     else { return "Invalid"; }
 }
-console.log(calculateVAT(1500));
+// console.log(calculateVAT(1500));
+
+
+
+// Problem-02 :  Valid  Bangladeshi Number 
+
+function validContact(contact) {
+
+    if (typeof contact === 'string') {
+        if (contact.length === 11 && contact.startsWith("01") && contact.includes(" ") !== true) {
+            return true;
+        } else { return false; }
+    }else {
+        return `"Invalid"`;
+    }
+
+}
+
+// console.log(validContact("01681"));
