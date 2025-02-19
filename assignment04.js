@@ -7,7 +7,7 @@ function calculateVAT(price) {
     }
     else { return "Invalid"; }
 }
-// console.log(calculateVAT(1500));
+
 
 
 
@@ -25,7 +25,7 @@ function validContact(contact) {
 
 }
 
-// console.log(validContact("01681"));
+
 
 // Problem-03 : Admission Success  (📚 Will He Succeed?)
 
@@ -51,7 +51,7 @@ function willSuccess(marks) {
     }
 }
 
-// console.log(willSuccess([48, 48, 50, 50, 100]));
+
 
 
 //Problem-04: Valid Proposal
@@ -74,14 +74,28 @@ function validProposal(person1, person2) {
 }
 
 
-// console.log(validProposal(
-//     { name: "Rahul", gender: "male", age: 28 },
-//     { name: "Joya", gender: "female", age: 21 }
-// ))
+
 
 
 // Problem-05: Let’s Calculate Total Sleep Time
 
-function  calculateSleepTime( times ) {
-    
+function calculateSleepTime(times) {
+    let seconds = null;
+    for (const time of times) {
+        if (typeof time === 'number') {
+            seconds += time;
+        } else {
+            return "Invalid";
+        }
+    }
+    const hours = Math.floor(seconds / 3600);
+    const minute = Math.floor((seconds % 3600) / 60);
+    const remainingSeconds = seconds % 60;
+
+    let finalTimes = {};
+    finalTimes.hour = hours;
+    finalTimes.minute = minute;
+    finalTimes.second = remainingSeconds;
+
+    return finalTimes;
 }
